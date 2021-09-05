@@ -1,0 +1,103 @@
+.mouse {
+    position: absolute;
+    width: 28px;
+    height: 50px;
+    border: 2px solid #fff;
+    margin: 0 auto;
+    border-radius: 30px;
+    z-index: 100;
+    bottom: 50px;
+    @include media-breakpoint-up(md) {
+        bottom: $largeOffset + px;
+    }
+    transition: all 0.3s ease;
+    transform:scale(0.8);
+    &:hover {
+        cursor: pointer;
+        background: rgba(#fff, 0.2);
+        // .mouse-wheel span.wheel {
+        //  border-color: #333;
+        //  background-color: #333;
+        // }
+        // .mouse-wheel span.arrow {
+        //  border-color: #333;
+        // }
+    }
+}
+.mouse .mouse-wheel {
+    overflow: hidden;
+    margin-top: 5px;
+}
+.mouse .mouse-wheel span {
+    display: block;
+    margin: 5px auto;
+    width: 5px;
+    height: 5px;
+}
+.mouse .mouse-wheel span.wheel {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    width: 0;
+    transition: all 0.3s ease;
+}
+.mouse .mouse-wheel span.arrow {
+    transition: all 0.3s ease;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-animation: scrollDown;
+    animation: scrollDown;
+    -webkit-animation-duration: 1.7s;
+    animation-duration: 1.7s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes scrollDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(5px) rotate(45deg);
+            transform: translateY(5px) rotate(45deg);
+  }
+  75% {
+    opacity: 0;
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(5px) rotate(45deg);
+            transform: translateY(5px) rotate(45deg);
+  }
+  75% {
+    opacity: 0;
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+  }
+}

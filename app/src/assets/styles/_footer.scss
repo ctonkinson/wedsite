@@ -1,0 +1,59 @@
+footer {
+	font-family: 'Texta';
+    color: #2494a2;
+    font-size: 11px;
+    margin-top: 15px;
+    justify-content: space-between;
+    @include media-breakpoint-up(sm) {
+    	margin-top: 25px;
+    	font-size: 14px;
+    }
+    @include media-breakpoint-up(md) {
+    	margin-top: $largeOffset + px;
+    }
+    @include media-breakpoint-up(lg) {
+        display: flex;
+    }
+    ul {
+    	display: none;
+    	@include media-breakpoint-up(md) {
+    		display: block;
+    	}
+    	li {
+    		display: inline-block;
+    		margin: 0 12px;
+    		position: relative;
+            @include media-breakpoint-only(md) {
+                &:first-of-type {
+                    margin-top: 10px;
+                    margin-left: 0;
+                }
+            }
+    		&:last-of-type {
+    			margin-right: 0;
+    			&:after { 
+    				display: none;
+    			}
+    		}
+    		&:after {
+    			width: 1px;
+    			height: 70%;
+    			position: absolute;
+    			background-color: $color-4;
+    			content: '';
+    			top: 0;
+    			bottom: 0;
+    			margin: auto;
+    			display: block;
+    			right: -12px;
+    		}
+    		.inner-link {
+    			cursor: pointer;
+    			transition: all 0.3s ease;
+    			&:hover {
+    				color: $color-2;
+    			}
+    		}
+    	}
+    }
+}

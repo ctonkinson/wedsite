@@ -1,0 +1,35 @@
+.pin {
+  width: 38px;
+  height: 48px;
+  
+  position: absolute;
+  /*transform: rotate(-45deg);*/
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+  background-size: contain;
+}
+
+
+.bounce {
+  animation-name: bounce;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 2.5s;
+}
+
+.pulse {
+  background: #fff;
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 22px 0px 0px -8px;
+  transform: rotateX(55deg);
+  z-index: -2;
+  opacity: 0.6;
+}
+
+
